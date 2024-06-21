@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Canye_but : MonoBehaviour
 {
-    [SerializeField] GameObject Main;
+    [SerializeField] GameObject MainObj;
    
     [SerializeField] public AudioSource Source;
+    Main MainScr;
     void Start()
     {
-        
+         MainScr = MainObj.GetComponent<Main>();
     }
 
     public void Canye()
     {
-        Main.GetComponent<Main>().count += 1;
+        MainScr.count += 1;
         Source.Play();
     }
+
     void Update()
     {
         
